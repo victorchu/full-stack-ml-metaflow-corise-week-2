@@ -1,4 +1,4 @@
-# full-stack-ml-metaflow-corise
+# full-stack-ml-metaflow-corise Week 2
 
 Create an empty `full-stack-ml-metaflow-corise-week-2` repository in your GitHub account. 
 
