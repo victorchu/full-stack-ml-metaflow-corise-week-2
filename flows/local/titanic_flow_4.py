@@ -71,10 +71,7 @@ class TFlow4(FlowSpec):
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
             X, y, test_size=0.33, random_state=42)
 
-
-
         self.next(self.model3)
-
 
     @step
     def model3(self):
@@ -101,7 +98,6 @@ class TFlow4(FlowSpec):
             return inp.clf,\
                    inp.score
 
-            
         self.results = sorted(map(score, inputs), key=lambda x: -x[1]) 
         self.model = self.results[0][0]
         
@@ -114,9 +110,9 @@ class TFlow4(FlowSpec):
         End of flow!
         """
         print('Scores:')
-        print('\n'.join('%s %f' % res for res in self.results))
+        print('\n'.join('- %s %f' % res for res in self.results))
         print('Best model:')
-        print(self.model)
+        print(f"=> {self.model}")
         print("TFlow4 is all done.")
 
 

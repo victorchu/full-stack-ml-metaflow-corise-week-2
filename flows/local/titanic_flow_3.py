@@ -27,7 +27,6 @@ class TFlow3(FlowSpec):
         self.clf = 'model_1'
         self.df['model'] = 0
         self.score = accuracy_score(self.df['Survived'], self.df['model'])
-
         self.next(self.choose_model)
         
         
@@ -51,12 +50,12 @@ class TFlow3(FlowSpec):
         """
         import numpy as np
 
-        def score(inp):
-            return inp.clf,\
-                   inp.score
+        def score(input):
+            """Extract model name (clf) and the score."""
+            return input.clf, input.score
 
-            
-        self.results = sorted(map(score, inputs), key=lambda x: -x[1]) 
+        results = map(score, inputs)
+        self.results = sorted(results, key=lambda x: -x[1])  # sort in the descending order
         self.model = self.results[0][0]
         
         self.next(self.end)

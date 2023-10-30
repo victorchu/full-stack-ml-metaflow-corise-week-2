@@ -23,10 +23,7 @@ class TFlow2(FlowSpec):
         from sklearn.metrics import accuracy_score
         self.df['model_2'] = self.df.Sex == 'female'
         self.score2 = accuracy_score(self.df['Survived'], self.df['model_2'])
-
-
         self.next(self.end)
-        
         
     @step
     def end(self):
@@ -34,7 +31,6 @@ class TFlow2(FlowSpec):
         End of flow!
         """
         print('Score = %s' % self.score2)
-        
         print("TFlow2 is all done.")
 
 

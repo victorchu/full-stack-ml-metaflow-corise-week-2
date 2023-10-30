@@ -86,7 +86,7 @@ class TFlow5(FlowSpec):
         End of flow!
         """
         print('Scores:')
-        print('\n'.join('%s %f' % res for res in self.results))
+        print('\n'.join('- %s %f' % res for res in self.results))
         print('Best model:')
         print(self.model)
         print("TFlow5 is all done.")

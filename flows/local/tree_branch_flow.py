@@ -18,6 +18,7 @@ class Branch_Flow(FlowSpec):
         self.iris = datasets.load_iris()
         self.X = self.iris['data']
         self.y = self.iris['target']
+        # VC: train three different models on the same data.
         self.next(self.rf_model, self.xt_model, self.dt_model)
     
                 
@@ -67,7 +68,7 @@ class Branch_Flow(FlowSpec):
     @step
     def choose_model(self, inputs):
         """
-        find 'best' model
+        JOIN: find 'best' model
         """
         import numpy as np
 
